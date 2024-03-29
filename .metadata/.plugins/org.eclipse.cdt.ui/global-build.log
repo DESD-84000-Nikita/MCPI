@@ -144,3 +144,1425 @@ Finished building: default.size.stdout
  
 Finished building: Day3_1.list
  
+15:06:55 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:06:55 **** Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/itm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/itm.d" -MT"Src/itm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/itm.o"
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/lcd.c: In function 'LcdBusyWait':
+../Src/lcd.c:11:48: error: expected expression before ')' token
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+   11 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|)BV(LCD_BF*2+1));
+      |                                                ^
+../Src/lcd.c:11:63: error: expected ';' before ')' token
+   11 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|)BV(LCD_BF*2+1));
+      |                                                               ^
+../Src/lcd.c:11:63: error: expected statement before ')' token
+../Src/main.c: In function 'main':
+../Src/main.c:31:9: warning: implicit declaration of function 'SystemInt'; did you mean 'SystemInit'? [-Wimplicit-function-declaration]
+   31 |         SystemInt();
+      |         ^~~~~~~~~
+      |         SystemInit
+../Src/main.c:33:9: warning: implicit declaration of function 'Lcd' [-Wimplicit-function-declaration]
+   33 |         Lcd(LCD_LINE1, "DESD @ SUNBEAM");
+      |         ^~~
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:08:04 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:08:04 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/system_stm32f4xx.o"
+../Src/main.c: In function 'main':
+../Src/main.c:31:9: warning: implicit declaration of function 'SystemInt'; did you mean 'SystemInit'? [-Wimplicit-function-declaration]
+   31 |         SystemInt();
+      |         ^~~~~~~~~
+      |         SystemInit
+../Src/lcd.c: In function 'LcdBusyWait':
+../Src/lcd.c:11:48: error: expected expression before ')' token
+   11 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|)BV(LCD_BF*2+1));
+      |                                                ^
+../Src/lcd.c:11:63: error: expected ';' before ')' token
+   11 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|)BV(LCD_BF*2+1));
+      |                                                               ^
+../Src/lcd.c:11:63: error: expected statement before ')' token
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:08:59 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:08:59 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc -o "Demo3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Demo3/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/home/sunbeam/st/stm32cubeide_1.15.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: ./Src/main.o: in function `main':
+/home/sunbeam/Desktop/MCPI/MCPI/Demo3/Debug/../Src/main.c:31: undefined reference to `SystemInt'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:63: Demo3.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:09:45 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:09:45 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Demo3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Demo3/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo3.elf
+ 
+arm-none-eabi-size  Demo3.elf 
+arm-none-eabi-objdump -h -S Demo3.elf  > "Demo3.list"
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo3.list
+ 
+15:21:07 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:21:07 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-size  Demo3.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+15:44:27 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:44:27 **** Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/itm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/itm.d" -MT"Src/itm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/itm.o"
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+../Src/led.c:9:3: error: expected identifier or '(' before '/' token
+    9 |  */
+      |   ^
+In file included from ../Inc/led.h:13,
+                 from ../Src/led.c:10:
+../Inc/stm32f407xx.h:159:3: warning: data definition has no type or storage class
+  159 | } IRQn_Type;
+      |   ^~~~~~~~~
+../Inc/stm32f407xx.h:159:3: warning: type defaults to 'int' in declaration of 'IRQn_Type' [-Wimplicit-int]
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+In file included from ../Inc/stm32f407xx.h:167:
+../Inc/core_cm4.h:1688:39: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1688 | __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+      |                                       ^~~~~~~~~
+../Inc/core_cm4.h:1705:46: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1705 | __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+      |                                              ^~~~~~~~~
+../Inc/core_cm4.h:1724:40: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1724 | __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+      |                                        ^~~~~~~~~
+../Inc/core_cm4.h:1743:47: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1743 | __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+      |                                               ^~~~~~~~~
+../Inc/core_cm4.h:1762:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1762 | __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h:1777:45: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1777 | __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+../Inc/core_cm4.h:1794:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1794 | __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h:1816:41: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1816 | __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+      |                                         ^~~~~~~~~
+../Inc/core_cm4.h:1838:45: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1838 | __STATIC_INLINE uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+../Inc/core_cm4.h:1913:39: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1913 | __STATIC_INLINE void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
+      |                                       ^~~~~~~~~
+../Inc/core_cm4.h:1928:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1928 | __STATIC_INLINE uint32_t __NVIC_GetVector(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h: In function 'SysTick_Config':
+../Inc/core_cm4.h:1621:39: warning: implicit declaration of function '__NVIC_SetPriority'; did you mean 'NVIC_SetPriority'? [-Wimplicit-function-declaration]
+ 1621 |   #define NVIC_SetPriority            __NVIC_SetPriority
+      |                                       ^~~~~~~~~~~~~~~~~~
+../Inc/core_cm4.h:2030:3: note: in expansion of macro 'NVIC_SetPriority'
+ 2030 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |   ^~~~~~~~~~~~~~~~
+../Inc/core_cm4.h:2030:21: error: 'SysTick_IRQn' undeclared (first use in this function); did you mean 'SysTick_Type'?
+ 2030 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                     ^~~~~~~~~~~~
+      |                     SysTick_Type
+../Inc/core_cm4.h:2030:21: note: each undeclared identifier is reported only once for each function it appears in
+arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/system_stm32f4xx.o"
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:44:28 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-size  Demo3.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+15:44:48 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:44:48 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c:9:3: error: expected identifier or '(' before '/' token
+    9 |  */
+      |   ^
+In file included from ../Inc/led.h:13,
+                 from ../Src/led.c:10:
+../Inc/stm32f407xx.h:159:3: warning: data definition has no type or storage class
+  159 | } IRQn_Type;
+      |   ^~~~~~~~~
+../Inc/stm32f407xx.h:159:3: warning: type defaults to 'int' in declaration of 'IRQn_Type' [-Wimplicit-int]
+In file included from ../Inc/stm32f407xx.h:167:
+../Inc/core_cm4.h:1688:39: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1688 | __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+      |                                       ^~~~~~~~~
+../Inc/core_cm4.h:1705:46: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1705 | __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+      |                                              ^~~~~~~~~
+../Inc/core_cm4.h:1724:40: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1724 | __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+      |                                        ^~~~~~~~~
+../Inc/core_cm4.h:1743:47: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1743 | __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+      |                                               ^~~~~~~~~
+../Inc/core_cm4.h:1762:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1762 | __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h:1777:45: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1777 | __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+../Inc/core_cm4.h:1794:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1794 | __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h:1816:41: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1816 | __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+      |                                         ^~~~~~~~~
+../Inc/core_cm4.h:1838:45: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1838 | __STATIC_INLINE uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+../Inc/core_cm4.h:1913:39: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1913 | __STATIC_INLINE void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
+      |                                       ^~~~~~~~~
+../Inc/core_cm4.h:1928:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1928 | __STATIC_INLINE uint32_t __NVIC_GetVector(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h: In function 'SysTick_Config':
+../Inc/core_cm4.h:1621:39: warning: implicit declaration of function '__NVIC_SetPriority'; did you mean 'NVIC_SetPriority'? [-Wimplicit-function-declaration]
+ 1621 |   #define NVIC_SetPriority            __NVIC_SetPriority
+      |                                       ^~~~~~~~~~~~~~~~~~
+../Inc/core_cm4.h:2030:3: note: in expansion of macro 'NVIC_SetPriority'
+ 2030 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |   ^~~~~~~~~~~~~~~~
+../Inc/core_cm4.h:2030:21: error: 'SysTick_IRQn' undeclared (first use in this function); did you mean 'SysTick_Type'?
+ 2030 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                     ^~~~~~~~~~~~
+      |                     SysTick_Type
+../Inc/core_cm4.h:2030:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:44:48 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-size  Demo3.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+15:45:15 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:45:15 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c:9:3: error: expected identifier or '(' before '/' token
+    9 |  */
+      |   ^
+In file included from ../Inc/led.h:13,
+                 from ../Src/led.c:10:
+../Inc/stm32f407xx.h:159:3: warning: data definition has no type or storage class
+  159 | } IRQn_Type;
+      |   ^~~~~~~~~
+../Inc/stm32f407xx.h:159:3: warning: type defaults to 'int' in declaration of 'IRQn_Type' [-Wimplicit-int]
+In file included from ../Inc/stm32f407xx.h:167:
+../Inc/core_cm4.h:1688:39: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1688 | __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+      |                                       ^~~~~~~~~
+../Inc/core_cm4.h:1705:46: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1705 | __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+      |                                              ^~~~~~~~~
+../Inc/core_cm4.h:1724:40: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1724 | __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+      |                                        ^~~~~~~~~
+../Inc/core_cm4.h:1743:47: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1743 | __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+      |                                               ^~~~~~~~~
+../Inc/core_cm4.h:1762:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1762 | __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h:1777:45: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1777 | __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+../Inc/core_cm4.h:1794:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1794 | __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h:1816:41: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1816 | __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+      |                                         ^~~~~~~~~
+../Inc/core_cm4.h:1838:45: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1838 | __STATIC_INLINE uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+../Inc/core_cm4.h:1913:39: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1913 | __STATIC_INLINE void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
+      |                                       ^~~~~~~~~
+../Inc/core_cm4.h:1928:43: error: expected declaration specifiers or '...' before 'IRQn_Type'
+ 1928 | __STATIC_INLINE uint32_t __NVIC_GetVector(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+../Inc/core_cm4.h: In function 'SysTick_Config':
+../Inc/core_cm4.h:1621:39: warning: implicit declaration of function '__NVIC_SetPriority'; did you mean 'NVIC_SetPriority'? [-Wimplicit-function-declaration]
+ 1621 |   #define NVIC_SetPriority            __NVIC_SetPriority
+      |                                       ^~~~~~~~~~~~~~~~~~
+../Inc/core_cm4.h:2030:3: note: in expansion of macro 'NVIC_SetPriority'
+ 2030 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |   ^~~~~~~~~~~~~~~~
+../Inc/core_cm4.h:2030:21: error: 'SysTick_IRQn' undeclared (first use in this function); did you mean 'SysTick_Type'?
+ 2030 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                     ^~~~~~~~~~~~
+      |                     SysTick_Type
+../Inc/core_cm4.h:2030:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:46:00 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:46:00 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc -o "Day3_2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Day3_2/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day3_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Day3_2.elf
+ 
+arm-none-eabi-size  Day3_2.elf 
+arm-none-eabi-objdump -h -S Day3_2.elf  > "Day3_2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Day3_2.list
+ 
+15:51:29 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:51:29 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+15:51:30 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc -o "Demo3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Demo3/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo3.elf
+ 
+arm-none-eabi-size  Demo3.elf 
+arm-none-eabi-objdump -h -S Demo3.elf  > "Demo3.list"
+   text	   data	    bss	    dec	    hex	filename
+   1472	      4	   1564	   3040	    be0	Demo3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo3.list
+ 
+15:52:45 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+15:52:46 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+15:52:46 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc -o "Demo3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Demo3/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo3.elf
+ 
+arm-none-eabi-size  Demo3.elf 
+arm-none-eabi-objdump -h -S Demo3.elf  > "Demo3.list"
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo3.list
+ 
+16:06:10 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:06:10 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:06:11 **** Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/itm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/itm.d" -MT"Src/itm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/itm.o"
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/lcd.c:9:
+../Inc/lcd.h:8: error: unterminated #ifndef
+    8 | #ifndef LCD_H_
+      | 
+../Src/lcd.c: In function 'LcdBusyWait':
+../Src/lcd.c:11:9: error: unknown type name 'uint32_t'
+   11 |         uint32_t state;
+      |         ^~~~~~~~
+../Src/lcd.c:10:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    9 | #include "lcd.h"
+  +++ |+#include <stdint.h>
+   10 | void LcdBusyWait(void){
+../Src/lcd.c:13:9: error: 'LCD_DATA_GPIO' undeclared (first use in this function)
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |         ^~~~~~~~~~~~~
+../Src/lcd.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/lcd.c:13:35: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |                                   ^~
+../Src/lcd.c:13:38: error: 'LCD_BF' undeclared (first use in this function); did you mean 'LCD_H_'?
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |                                      ^~~~~~
+      |                                      LCD_H_
+../Src/lcd.c:15:9: error: 'LCD_CTRL_GPIO' undeclared (first use in this function)
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |         ^~~~~~~~~~~~~
+../Src/lcd.c:15:32: error: 'LCD_RS_CLR' undeclared (first use in this function)
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                ^~~~~~~~~~
+../Src/lcd.c:15:47: error: 'LCD_RW' undeclared (first use in this function); did you mean 'LCD_H_'?
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                               ^~~~~~
+      |                                               LCD_H_
+../Src/lcd.c:15:58: error: 'LCD_EN' undeclared (first use in this function); did you mean 'LCD_H_'?
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                                          ^~~~~~
+      |                                                          LCD_H_
+../Src/lcd.c:21:32: error: 'LCD_RW_CLR' undeclared (first use in this function)
+   21 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RW_CLR)|BV(LCD_EN_CLR);
+      |                                ^~~~~~~~~~
+../Src/lcd.c:21:47: error: 'LCD_EN_CLR' undeclared (first use in this function)
+   21 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RW_CLR)|BV(LCD_EN_CLR);
+      |                                               ^~~~~~~~~~
+../Src/lcd.c: At top level:
+../Src/lcd.c:25:21: error: unknown type name 'uint8_t'
+   25 | void LcdWriteNibble(uint8_t rs, uint8_t val){
+      |                     ^~~~~~~
+../Src/lcd.c:25:21: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:25:33: error: unknown type name 'uint8_t'
+   25 | void LcdWriteNibble(uint8_t rs, uint8_t val){
+      |                                 ^~~~~~~
+../Src/lcd.c:25:33: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:40:15: error: unknown type name 'uint8_t'
+   40 | void LcdWrite(uint8_t rs, uint8_t val){
+      |               ^~~~~~~
+../Src/lcd.c:40:15: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:40:27: error: unknown type name 'uint8_t'
+   40 | void LcdWrite(uint8_t rs, uint8_t val){
+      |                           ^~~~~~~
+../Src/lcd.c:40:27: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c: In function 'LcdInit':
+../Src/lcd.c:50:9: warning: implicit declaration of function 'DelayMs' [-Wimplicit-function-declaration]
+   50 |         DelayMs(50);
+      |         ^~~~~~~
+../Src/lcd.c:51:10: error: 'RCC' undeclared (first use in this function)
+   51 |          RCC->AHB1ENR |=BV(LCD_DATA_GPIO_EN);
+      |          ^~~
+../Src/lcd.c:51:28: error: 'LCD_DATA_GPIO_EN' undeclared (first use in this function)
+   51 |          RCC->AHB1ENR |=BV(LCD_DATA_GPIO_EN);
+      |                            ^~~~~~~~~~~~~~~~
+../Src/lcd.c:52:28: error: 'LCD_CTRL_GPIO_EN' undeclared (first use in this function)
+   52 |          RCC->AHB1ENR |=BV(LCD_CTRL_GPIO_EN);
+      |                            ^~~~~~~~~~~~~~~~
+../Src/lcd.c:55:10: error: 'LCD_DATA_GPIO' undeclared (first use in this function)
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |          ^~~~~~~~~~~~~
+../Src/lcd.c:55:39: error: 'LCD_D7' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                       ^~~~~~
+      |                                       LCD_H_
+../Src/lcd.c:55:56: error: 'LCD_D6' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                        ^~~~~~
+      |                                                        LCD_H_
+../Src/lcd.c:55:73: error: 'LCD_D5' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                                         ^~~~~~
+      |                                                                         LCD_H_
+../Src/lcd.c:55:90: error: 'LCD_D4' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                                                          ^~~~~~
+      |                                                                                          LCD_H_
+../Src/lcd.c:61:43: error: 'LCD_D7_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                           ^~~~~~~~~~
+../Src/lcd.c:61:60: error: 'LCD_D6_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                            ^~~~~~~~~~
+../Src/lcd.c:61:77: error: 'LCD_D5_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                                             ^~~~~~~~~~
+../Src/lcd.c:61:94: error: 'LCD_D4_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                                                              ^~~~~~~~~~
+../Src/lcd.c:63:17: error: 'LCD_CTRL_GPIO' undeclared (first use in this function)
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                 ^~~~~~~~~~~~~
+../Src/lcd.c:63:46: error: 'LCD_RS' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                              ^~~~~~
+      |                                              LCD_H_
+../Src/lcd.c:63:63: error: 'LCD_RW' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                                               ^~~~~~
+      |                                                               LCD_H_
+../Src/lcd.c:63:80: error: 'LCD_EN' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                                                                ^~~~~~
+      |                                                                                LCD_H_
+../Src/lcd.c:69:39: error: 'LCD_RS_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                       ^~~~~~~~~~
+../Src/lcd.c:69:56: error: 'LCD_RW_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                                        ^~~~~~~~~~
+../Src/lcd.c:69:73: error: 'LCD_EN_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                                                         ^~~~~~~~~~
+../Src/lcd.c:72:13: warning: implicit declaration of function 'LcdWrite' [-Wimplicit-function-declaration]
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |             ^~~~~~~~
+../Src/lcd.c:72:22: error: 'LCD_CMD' undeclared (first use in this function)
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |                      ^~~~~~~
+../Src/lcd.c:72:31: error: 'LCD_FN_SET' undeclared (first use in this function)
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |                               ^~~~~~~~~~
+../Src/lcd.c:73:31: error: 'LCD_DISP_ON' undeclared (first use in this function)
+   73 |             LcdWrite(LCD_CMD, LCD_DISP_ON);
+      |                               ^~~~~~~~~~~
+../Src/lcd.c:74:31: error: 'LCD_ENTRY_MODE' undeclared (first use in this function)
+   74 |             LcdWrite(LCD_CMD, LCD_ENTRY_MODE);
+      |                               ^~~~~~~~~~~~~~
+../Src/lcd.c:75:31: error: 'LCD_CLEAR' undeclared (first use in this function)
+   75 |             LcdWrite(LCD_CMD, LCD_CLEAR);
+      |                               ^~~~~~~~~
+../Src/lcd.c: At top level:
+../Src/lcd.c:81:14: error: unknown type name 'uint8_t'
+   81 | void LcdPuts(uint8_t line,char str[]){
+      |              ^~~~~~~
+../Src/lcd.c:81:14: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:31:17: warning: implicit declaration of function 'LcdInit' [-Wimplicit-function-declaration]
+   31 |                 LcdInit();
+      |                 ^~~~~~~
+../Src/main.c:32:17: warning: implicit declaration of function 'LcdPuts' [-Wimplicit-function-declaration]
+   32 |                 LcdPuts(LCD_LINE1, "DESD @ SUNBEAM");
+      |                 ^~~~~~~
+../Src/main.c:32:25: error: 'LCD_LINE1' undeclared (first use in this function)
+   32 |                 LcdPuts(LCD_LINE1, "DESD @ SUNBEAM");
+      |                         ^~~~~~~~~
+../Src/main.c:32:25: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:33:25: error: 'LCD_LINE2' undeclared (first use in this function)
+   33 |                 LcdPuts(LCD_LINE2, "GOD BLESS YOU");
+      |                         ^~~~~~~~~
+make: *** [Src/subdir.mk:34: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:06:11 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc -o "Demo3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Demo3/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo3.elf
+ 
+arm-none-eabi-size  Demo3.elf 
+arm-none-eabi-objdump -h -S Demo3.elf  > "Demo3.list"
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo3.list
+ 
+16:06:54 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:06:54 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:06:55 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/system_stm32f4xx.o"
+In file included from ../Src/lcd.c:9:
+../Inc/lcd.h:8: error: unterminated #ifndef
+    8 | #ifndef LCD_H_
+      | 
+../Src/lcd.c: In function 'LcdBusyWait':
+../Src/lcd.c:11:9: error: unknown type name 'uint32_t'
+   11 |         uint32_t state;
+      |         ^~~~~~~~
+../Src/lcd.c:10:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    9 | #include "lcd.h"
+  +++ |+#include <stdint.h>
+   10 | void LcdBusyWait(void){
+../Src/lcd.c:13:9: error: 'LCD_DATA_GPIO' undeclared (first use in this function)
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |         ^~~~~~~~~~~~~
+../Src/lcd.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/lcd.c:13:35: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |                                   ^~
+../Src/lcd.c:13:38: error: 'LCD_BF' undeclared (first use in this function); did you mean 'LCD_H_'?
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |                                      ^~~~~~
+      |                                      LCD_H_
+../Src/lcd.c:15:9: error: 'LCD_CTRL_GPIO' undeclared (first use in this function)
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |         ^~~~~~~~~~~~~
+../Src/lcd.c:15:32: error: 'LCD_RS_CLR' undeclared (first use in this function)
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                ^~~~~~~~~~
+../Src/lcd.c:15:47: error: 'LCD_RW' undeclared (first use in this function); did you mean 'LCD_H_'?
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                               ^~~~~~
+      |                                               LCD_H_
+../Src/lcd.c:15:58: error: 'LCD_EN' undeclared (first use in this function); did you mean 'LCD_H_'?
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                                          ^~~~~~
+      |                                                          LCD_H_
+../Src/lcd.c:21:32: error: 'LCD_RW_CLR' undeclared (first use in this function)
+   21 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RW_CLR)|BV(LCD_EN_CLR);
+      |                                ^~~~~~~~~~
+../Src/lcd.c:21:47: error: 'LCD_EN_CLR' undeclared (first use in this function)
+   21 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RW_CLR)|BV(LCD_EN_CLR);
+      |                                               ^~~~~~~~~~
+../Src/lcd.c: At top level:
+../Src/lcd.c:25:21: error: unknown type name 'uint8_t'
+   25 | void LcdWriteNibble(uint8_t rs, uint8_t val){
+      |                     ^~~~~~~
+../Src/lcd.c:25:21: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:25:33: error: unknown type name 'uint8_t'
+   25 | void LcdWriteNibble(uint8_t rs, uint8_t val){
+      |                                 ^~~~~~~
+../Src/lcd.c:25:33: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:40:15: error: unknown type name 'uint8_t'
+   40 | void LcdWrite(uint8_t rs, uint8_t val){
+      |               ^~~~~~~
+../Src/lcd.c:40:15: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:40:27: error: unknown type name 'uint8_t'
+   40 | void LcdWrite(uint8_t rs, uint8_t val){
+      |                           ^~~~~~~
+../Src/lcd.c:40:27: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c: In function 'LcdInit':
+../Src/lcd.c:50:9: warning: implicit declaration of function 'DelayMs' [-Wimplicit-function-declaration]
+   50 |         DelayMs(50);
+      |         ^~~~~~~
+../Src/lcd.c:51:10: error: 'RCC' undeclared (first use in this function)
+   51 |          RCC->AHB1ENR |=BV(LCD_DATA_GPIO_EN);
+      |          ^~~
+../Src/lcd.c:51:28: error: 'LCD_DATA_GPIO_EN' undeclared (first use in this function)
+   51 |          RCC->AHB1ENR |=BV(LCD_DATA_GPIO_EN);
+      |                            ^~~~~~~~~~~~~~~~
+../Src/lcd.c:52:28: error: 'LCD_CTRL_GPIO_EN' undeclared (first use in this function)
+   52 |          RCC->AHB1ENR |=BV(LCD_CTRL_GPIO_EN);
+      |                            ^~~~~~~~~~~~~~~~
+../Src/lcd.c:55:10: error: 'LCD_DATA_GPIO' undeclared (first use in this function)
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |          ^~~~~~~~~~~~~
+../Src/lcd.c:55:39: error: 'LCD_D7' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                       ^~~~~~
+      |                                       LCD_H_
+../Src/lcd.c:55:56: error: 'LCD_D6' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                        ^~~~~~
+      |                                                        LCD_H_
+../Src/lcd.c:55:73: error: 'LCD_D5' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                                         ^~~~~~
+      |                                                                         LCD_H_
+../Src/lcd.c:55:90: error: 'LCD_D4' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                                                          ^~~~~~
+      |                                                                                          LCD_H_
+../Src/lcd.c:61:43: error: 'LCD_D7_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                           ^~~~~~~~~~
+../Src/lcd.c:61:60: error: 'LCD_D6_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                            ^~~~~~~~~~
+../Src/lcd.c:61:77: error: 'LCD_D5_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                                             ^~~~~~~~~~
+../Src/lcd.c:61:94: error: 'LCD_D4_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                                                              ^~~~~~~~~~
+../Src/lcd.c:63:17: error: 'LCD_CTRL_GPIO' undeclared (first use in this function)
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                 ^~~~~~~~~~~~~
+../Src/lcd.c:63:46: error: 'LCD_RS' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                              ^~~~~~
+      |                                              LCD_H_
+../Src/lcd.c:63:63: error: 'LCD_RW' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                                               ^~~~~~
+      |                                                               LCD_H_
+../Src/lcd.c:63:80: error: 'LCD_EN' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                                                                ^~~~~~
+      |                                                                                LCD_H_
+../Src/lcd.c:69:39: error: 'LCD_RS_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                       ^~~~~~~~~~
+../Src/lcd.c:69:56: error: 'LCD_RW_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                                        ^~~~~~~~~~
+../Src/lcd.c:69:73: error: 'LCD_EN_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                                                         ^~~~~~~~~~
+../Src/lcd.c:72:13: warning: implicit declaration of function 'LcdWrite' [-Wimplicit-function-declaration]
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |             ^~~~~~~~
+../Src/lcd.c:72:22: error: 'LCD_CMD' undeclared (first use in this function)
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |                      ^~~~~~~
+../Src/lcd.c:72:31: error: 'LCD_FN_SET' undeclared (first use in this function)
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |                               ^~~~~~~~~~
+../Src/lcd.c:73:31: error: 'LCD_DISP_ON' undeclared (first use in this function)
+   73 |             LcdWrite(LCD_CMD, LCD_DISP_ON);
+      |                               ^~~~~~~~~~~
+../Src/lcd.c:74:31: error: 'LCD_ENTRY_MODE' undeclared (first use in this function)
+   74 |             LcdWrite(LCD_CMD, LCD_ENTRY_MODE);
+      |                               ^~~~~~~~~~~~~~
+../Src/lcd.c:75:31: error: 'LCD_CLEAR' undeclared (first use in this function)
+   75 |             LcdWrite(LCD_CMD, LCD_CLEAR);
+      |                               ^~~~~~~~~
+../Src/lcd.c: At top level:
+../Src/lcd.c:81:14: error: unknown type name 'uint8_t'
+   81 | void LcdPuts(uint8_t line,char str[]){
+      |              ^~~~~~~
+../Src/lcd.c:81:14: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/main.c:23:
+../Inc/lcd.h:8: error: unterminated #ifndef
+    8 | #ifndef LCD_H_
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:31:17: warning: implicit declaration of function 'LcdInit' [-Wimplicit-function-declaration]
+   31 |                 LcdInit();
+      |                 ^~~~~~~
+../Src/main.c:32:17: warning: implicit declaration of function 'LcdPuts' [-Wimplicit-function-declaration]
+   32 |                 LcdPuts(LCD_LINE1, "DESD @ SUNBEAM");
+      |                 ^~~~~~~
+../Src/main.c:32:25: error: 'LCD_LINE1' undeclared (first use in this function)
+   32 |                 LcdPuts(LCD_LINE1, "DESD @ SUNBEAM");
+      |                         ^~~~~~~~~
+../Src/main.c:32:25: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:33:25: error: 'LCD_LINE2' undeclared (first use in this function)
+   33 |                 LcdPuts(LCD_LINE2, "GOD BLESS YOU");
+      |                         ^~~~~~~~~
+make: *** [Src/subdir.mk:34: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:06:55 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-size  Demo3.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+16:07:31 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:07:31 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:07:31 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/lcd.c:9:
+../Inc/lcd.h:8: error: unterminated #ifndef
+    8 | #ifndef LCD_H_
+      | 
+../Src/lcd.c: In function 'LcdBusyWait':
+../Src/lcd.c:11:9: error: unknown type name 'uint32_t'
+   11 |         uint32_t state;
+      |         ^~~~~~~~
+../Src/lcd.c:10:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    9 | #include "lcd.h"
+  +++ |+#include <stdint.h>
+   10 | void LcdBusyWait(void){
+../Src/lcd.c:13:9: error: 'LCD_DATA_GPIO' undeclared (first use in this function)
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |         ^~~~~~~~~~~~~
+../Src/lcd.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/lcd.c:13:35: warning: implicit declaration of function 'BV' [-Wimplicit-function-declaration]
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |                                   ^~
+../Src/lcd.c:13:38: error: 'LCD_BF' undeclared (first use in this function); did you mean 'LCD_H_'?
+   13 |         LCD_DATA_GPIO->MODER &= ~(BV(LCD_BF*2)|BV(LCD_BF*2+1));
+      |                                      ^~~~~~
+      |                                      LCD_H_
+../Src/lcd.c:15:9: error: 'LCD_CTRL_GPIO' undeclared (first use in this function)
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |         ^~~~~~~~~~~~~
+../Src/lcd.c:15:32: error: 'LCD_RS_CLR' undeclared (first use in this function)
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                ^~~~~~~~~~
+../Src/lcd.c:15:47: error: 'LCD_RW' undeclared (first use in this function); did you mean 'LCD_H_'?
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                               ^~~~~~
+      |                                               LCD_H_
+../Src/lcd.c:15:58: error: 'LCD_EN' undeclared (first use in this function); did you mean 'LCD_H_'?
+   15 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RS_CLR)|BV(LCD_RW)|BV(LCD_EN);
+      |                                                          ^~~~~~
+      |                                                          LCD_H_
+../Src/lcd.c:21:32: error: 'LCD_RW_CLR' undeclared (first use in this function)
+   21 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RW_CLR)|BV(LCD_EN_CLR);
+      |                                ^~~~~~~~~~
+../Src/lcd.c:21:47: error: 'LCD_EN_CLR' undeclared (first use in this function)
+   21 |         LCD_CTRL_GPIO->BSRR=BV(LCD_RW_CLR)|BV(LCD_EN_CLR);
+      |                                               ^~~~~~~~~~
+../Src/lcd.c: At top level:
+../Src/lcd.c:25:21: error: unknown type name 'uint8_t'
+   25 | void LcdWriteNibble(uint8_t rs, uint8_t val){
+      |                     ^~~~~~~
+../Src/lcd.c:25:21: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:25:33: error: unknown type name 'uint8_t'
+   25 | void LcdWriteNibble(uint8_t rs, uint8_t val){
+      |                                 ^~~~~~~
+../Src/lcd.c:25:33: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:40:15: error: unknown type name 'uint8_t'
+   40 | void LcdWrite(uint8_t rs, uint8_t val){
+      |               ^~~~~~~
+../Src/lcd.c:40:15: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c:40:27: error: unknown type name 'uint8_t'
+   40 | void LcdWrite(uint8_t rs, uint8_t val){
+      |                           ^~~~~~~
+../Src/lcd.c:40:27: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/lcd.c: In function 'LcdInit':
+../Src/lcd.c:50:9: warning: implicit declaration of function 'DelayMs' [-Wimplicit-function-declaration]
+   50 |         DelayMs(50);
+      |         ^~~~~~~
+../Src/lcd.c:51:10: error: 'RCC' undeclared (first use in this function)
+   51 |          RCC->AHB1ENR |=BV(LCD_DATA_GPIO_EN);
+      |          ^~~
+../Src/lcd.c:51:28: error: 'LCD_DATA_GPIO_EN' undeclared (first use in this function)
+   51 |          RCC->AHB1ENR |=BV(LCD_DATA_GPIO_EN);
+      |                            ^~~~~~~~~~~~~~~~
+../Src/lcd.c:52:28: error: 'LCD_CTRL_GPIO_EN' undeclared (first use in this function)
+   52 |          RCC->AHB1ENR |=BV(LCD_CTRL_GPIO_EN);
+      |                            ^~~~~~~~~~~~~~~~
+../Src/lcd.c:55:10: error: 'LCD_DATA_GPIO' undeclared (first use in this function)
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |          ^~~~~~~~~~~~~
+../Src/lcd.c:55:39: error: 'LCD_D7' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                       ^~~~~~
+      |                                       LCD_H_
+../Src/lcd.c:55:56: error: 'LCD_D6' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                        ^~~~~~
+      |                                                        LCD_H_
+../Src/lcd.c:55:73: error: 'LCD_D5' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                                         ^~~~~~
+      |                                                                         LCD_H_
+../Src/lcd.c:55:90: error: 'LCD_D4' undeclared (first use in this function); did you mean 'LCD_H_'?
+   55 |          LCD_DATA_GPIO->MODER &= ~(BV(LCD_D7*2+1) | BV(LCD_D6*2+1) | BV(LCD_D5*2+1) | BV(LCD_D4*2+1));
+      |                                                                                          ^~~~~~
+      |                                                                                          LCD_H_
+../Src/lcd.c:61:43: error: 'LCD_D7_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                           ^~~~~~~~~~
+../Src/lcd.c:61:60: error: 'LCD_D6_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                            ^~~~~~~~~~
+../Src/lcd.c:61:77: error: 'LCD_D5_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                                             ^~~~~~~~~~
+../Src/lcd.c:61:94: error: 'LCD_D4_CLR' undeclared (first use in this function)
+   61 |                 LCD_DATA_GPIO->BSRR = (BV(LCD_D7_CLR) | BV(LCD_D6_CLR) | BV(LCD_D5_CLR) | BV(LCD_D4_CLR));
+      |                                                                                              ^~~~~~~~~~
+../Src/lcd.c:63:17: error: 'LCD_CTRL_GPIO' undeclared (first use in this function)
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                 ^~~~~~~~~~~~~
+../Src/lcd.c:63:46: error: 'LCD_RS' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                              ^~~~~~
+      |                                              LCD_H_
+../Src/lcd.c:63:63: error: 'LCD_RW' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                                               ^~~~~~
+      |                                                               LCD_H_
+../Src/lcd.c:63:80: error: 'LCD_EN' undeclared (first use in this function); did you mean 'LCD_H_'?
+   63 |                 LCD_CTRL_GPIO->MODER &= ~(BV(LCD_RS*2+1) | BV(LCD_RW*2+1) | BV(LCD_EN*2+1));
+      |                                                                                ^~~~~~
+      |                                                                                LCD_H_
+../Src/lcd.c:69:39: error: 'LCD_RS_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                       ^~~~~~~~~~
+../Src/lcd.c:69:56: error: 'LCD_RW_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                                        ^~~~~~~~~~
+../Src/lcd.c:69:73: error: 'LCD_EN_CLR' undeclared (first use in this function)
+   69 |             LCD_CTRL_GPIO->BSRR = (BV(LCD_RS_CLR) | BV(LCD_RW_CLR) | BV(LCD_EN_CLR));
+      |                                                                         ^~~~~~~~~~
+../Src/lcd.c:72:13: warning: implicit declaration of function 'LcdWrite' [-Wimplicit-function-declaration]
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |             ^~~~~~~~
+../Src/lcd.c:72:22: error: 'LCD_CMD' undeclared (first use in this function)
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |                      ^~~~~~~
+../Src/lcd.c:72:31: error: 'LCD_FN_SET' undeclared (first use in this function)
+   72 |             LcdWrite(LCD_CMD, LCD_FN_SET);
+      |                               ^~~~~~~~~~
+../Src/lcd.c:73:31: error: 'LCD_DISP_ON' undeclared (first use in this function)
+   73 |             LcdWrite(LCD_CMD, LCD_DISP_ON);
+      |                               ^~~~~~~~~~~
+../Src/lcd.c:74:31: error: 'LCD_ENTRY_MODE' undeclared (first use in this function)
+   74 |             LcdWrite(LCD_CMD, LCD_ENTRY_MODE);
+      |                               ^~~~~~~~~~~~~~
+../Src/lcd.c:75:31: error: 'LCD_CLEAR' undeclared (first use in this function)
+   75 |             LcdWrite(LCD_CMD, LCD_CLEAR);
+      |                               ^~~~~~~~~
+../Src/lcd.c: At top level:
+../Src/lcd.c:81:14: error: unknown type name 'uint8_t'
+   81 | void LcdPuts(uint8_t line,char str[]){
+      |              ^~~~~~~
+../Src/lcd.c:81:14: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/main.c:23:
+../Inc/lcd.h:8: error: unterminated #ifndef
+    8 | #ifndef LCD_H_
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:31:17: warning: implicit declaration of function 'LcdInit' [-Wimplicit-function-declaration]
+   31 |                 LcdInit();
+      |                 ^~~~~~~
+../Src/main.c:32:17: warning: implicit declaration of function 'LcdPuts' [-Wimplicit-function-declaration]
+   32 |                 LcdPuts(LCD_LINE1, "DESD @ SUNBEAM");
+      |                 ^~~~~~~
+../Src/main.c:32:25: error: 'LCD_LINE1' undeclared (first use in this function)
+   32 |                 LcdPuts(LCD_LINE1, "DESD @ SUNBEAM");
+      |                         ^~~~~~~~~
+../Src/main.c:32:25: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:33:25: error: 'LCD_LINE2' undeclared (first use in this function)
+   33 |                 LcdPuts(LCD_LINE2, "GOD BLESS YOU");
+      |                         ^~~~~~~~~
+make: *** [Src/subdir.mk:34: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:08:32 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:08:33 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:08:33 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Day4_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Day4_1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day4_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Day4_1.elf
+ 
+arm-none-eabi-size  Day4_1.elf 
+arm-none-eabi-objdump -h -S Day4_1.elf  > "Day4_1.list"
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Day4_1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Day4_1.list
+ 
+16:51:52 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:51:52 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:51:52 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/lcd.c:9:
+../Inc/lcd.h:47:30: error: unknown type name 'num'; did you mean 'enum'?
+   47 | void LeftShift(uint8_t line ,num);
+      |                              ^~~
+      |                              enum
+../Src/lcd.c:89:25: error: unknown type name 'num'; did you mean 'enum'?
+   89 | void LeftShift(uint8_t ,num)
+      |                         ^~~
+      |                         enum
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/main.c:23:
+../Inc/lcd.h:47:30: error: unknown type name 'num'; did you mean 'enum'?
+   47 | void LeftShift(uint8_t line ,num);
+      |                              ^~~
+      |                              enum
+../Src/main.c: In function 'main':
+../Src/main.c:34:17: warning: implicit declaration of function 'LeftShift' [-Wimplicit-function-declaration]
+   34 |                 LeftShift(16);
+      |                 ^~~~~~~~~
+make: *** [Src/subdir.mk:34: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:53:14 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:53:14 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:53:15 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/lcd.c:9:
+../Inc/lcd.h:47:26: error: unknown type name 'num'; did you mean 'enum'?
+   47 | void LeftShift(uint8_t  ,num);
+      |                          ^~~
+      |                          enum
+../Src/lcd.c:89:25: error: unknown type name 'num'; did you mean 'enum'?
+   89 | void LeftShift(uint8_t ,num)
+      |                         ^~~
+      |                         enum
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/main.c:23:
+../Inc/lcd.h:47:26: error: unknown type name 'num'; did you mean 'enum'?
+   47 | void LeftShift(uint8_t  ,num);
+      |                          ^~~
+      |                          enum
+../Src/main.c: In function 'main':
+../Src/main.c:34:17: warning: implicit declaration of function 'LeftShift' [-Wimplicit-function-declaration]
+   34 |                 LeftShift(16);
+      |                 ^~~~~~~~~
+make: *** [Src/subdir.mk:34: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:54:30 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:54:30 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:54:30 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/lcd.c:89:25: error: unknown type name 'num'; did you mean 'enum'?
+   89 | void LeftShift(uint8_t ,num)
+      |                         ^~~
+      |                         enum
+make: *** [Src/subdir.mk:34: Src/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:55:18 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+16:55:19 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+16:55:19 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc -o "Day4_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Day4_1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day4_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Day4_1.elf
+ 
+arm-none-eabi-size  Day4_1.elf 
+arm-none-eabi-objdump -h -S Day4_1.elf  > "Day4_1.list"
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Day4_1.list
+ 
+17:09:17 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:09:17 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:09:17 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:09:44 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:09:44 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:09:44 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:12:07 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:12:08 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:12:08 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:16:02 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:16:31 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:16:59 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:16:59 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:16:59 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:17:09 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1520	      4	   1564	   3088	    c10	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:18:46 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:18:47 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:18:47 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc -o "Day4_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Day4_1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day4_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Day4_1.elf
+ 
+arm-none-eabi-size  Day4_1.elf 
+arm-none-eabi-objdump -h -S Day4_1.elf  > "Day4_1.list"
+   text	   data	    bss	    dec	    hex	filename
+   1524	      4	   1564	   3092	    c14	Day4_1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Day4_1.list
+ 
+17:18:58 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1524	      4	   1564	   3092	    c14	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:20:16 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:20:16 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:20:17 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1524	      4	   1564	   3092	    c14	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:20:26 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1524	      4	   1564	   3092	    c14	Day4_1.elf
+Finished building: default.size.stdout
+ 
+17:26:25 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+17:26:25 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+17:26:26 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Day4_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/MCPI/MCPI/Day4_1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day4_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Day4_1.elf
+ 
+arm-none-eabi-size  Day4_1.elf 
+arm-none-eabi-objdump -h -S Day4_1.elf  > "Day4_1.list"
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Day4_1.list
+ 
+18:23:16 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:23:16 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:23:16 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:23:17 **** Incremental Build of configuration Debug for project Demo3 ****
+make -j4 all 
+arm-none-eabi-size  Demo3.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1460	      4	   1564	   3028	    bd4	Demo3.elf
+Finished building: default.size.stdout
+ 
+18:23:35 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:23:36 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:23:36 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:23:48 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
