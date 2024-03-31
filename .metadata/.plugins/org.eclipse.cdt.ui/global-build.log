@@ -1566,3 +1566,733 @@ arm-none-eabi-size  Day4_1.elf
    1576	      4	   1564	   3144	    c48	Day4_1.elf
 Finished building: default.size.stdout
  
+18:43:36 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:43:36 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:43:36 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:43:36 **** Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/itm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/itm.d" -MT"Src/itm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/itm.o"
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+In file included from ../Inc/led.h:10,
+                 from ../Src/led.c:7:
+../Inc/system_stm32f4xx.h:74:8: error: unknown type name 'uint32_t'
+   74 | extern uint32_t SystemCoreClock;          /*!< System Clock Frequency (Core Clock) */
+      |        ^~~~~~~~
+../Inc/system_stm32f4xx.h:76:14: error: unknown type name 'uint8_t'
+   76 | extern const uint8_t  AHBPrescTable[16];    /*!< AHB prescalers table values */
+      |              ^~~~~~~
+../Inc/system_stm32f4xx.h:77:14: error: unknown type name 'uint8_t'
+   77 | extern const uint8_t  APBPrescTable[8];     /*!< APB prescalers table values */
+      |              ^~~~~~~
+../Inc/system_stm32f4xx.h:124:16: error: unknown type name 'uint32_t'
+  124 | void SwDelayMs(uint32_t ms);
+      |                ^~~~~~~~
+../Inc/system_stm32f4xx.h:1:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /**
+../Inc/system_stm32f4xx.h:126:1: error: unknown type name 'uint32_t'
+  126 | uint32_t DWT_Init(void);
+      | ^~~~~~~~
+../Inc/system_stm32f4xx.h:126:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/system_stm32f4xx.h:131:37: error: unknown type name 'uint32_t'
+  131 | static inline void DelayMs(volatile uint32_t ms) {
+      |                                     ^~~~~~~~
+../Inc/system_stm32f4xx.h: In function 'DelayMs':
+../Inc/system_stm32f4xx.h:132:9: error: unknown type name 'uint32_t'
+  132 |         uint32_t init_ticks = DWT->CYCCNT;
+      |         ^~~~~~~~
+../Inc/system_stm32f4xx.h:132:9: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/system_stm32f4xx.h:132:31: error: 'DWT' undeclared (first use in this function)
+  132 |         uint32_t init_ticks = DWT->CYCCNT;
+      |                               ^~~
+../Inc/system_stm32f4xx.h:132:31: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/system_stm32f4xx.h:133:9: error: unknown type name 'uint32_t'
+  133 |         uint32_t ticks = (SystemCoreClock / 1000);
+      |         ^~~~~~~~
+../Inc/system_stm32f4xx.h:133:9: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h: At top level:
+../Inc/led.h:26:14: error: unknown type name 'uint32_t'
+   26 | void LedInit(uint32_t pin);
+      |              ^~~~~~~~
+../Inc/led.h:11:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+   10 |  #include "system_stm32f4xx.h"
+  +++ |+#include <stdint.h>
+   11 | 
+../Inc/led.h:27:12: error: unknown type name 'uint32_t'
+   27 | void LedOn(uint32_t pin);
+      |            ^~~~~~~~
+../Inc/led.h:27:12: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h:28:13: error: unknown type name 'uint32_t'
+   28 | void LedOff(uint32_t pin);
+      |             ^~~~~~~~
+../Inc/led.h:28:13: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h:30:15: error: unknown type name 'uint32_t'
+   30 | void LedBlink(uint32_t pin ,uint32_t delay);
+      |               ^~~~~~~~
+../Inc/led.h:30:15: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h:30:29: error: unknown type name 'uint32_t'
+   30 | void LedBlink(uint32_t pin ,uint32_t delay);
+      |                             ^~~~~~~~
+../Inc/led.h:30:29: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+In file included from ../Src/led.c:8:
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Inc/system_stm32f4xx.h:124:16: error: unknown type name 'uint32_t'
+  124 | void SwDelayMs(uint32_t ms);
+      |                ^~~~~~~~
+../Inc/system_stm32f4xx.h:1:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /**
+../Inc/system_stm32f4xx.h:126:1: error: unknown type name 'uint32_t'
+  126 | uint32_t DWT_Init(void);
+      | ^~~~~~~~
+../Inc/system_stm32f4xx.h:126:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/led.c:10:14: error: unknown type name 'uint32_t'
+   10 | void LedInit(uint32_t pin)
+      |              ^~~~~~~~
+../Src/led.c:9:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+    8 | #include "system_stm32f4xx.h"
+  +++ |+#include <stdint.h>
+    9 | 
+../Src/led.c:21:12: error: unknown type name 'uint32_t'
+   21 | void LedOn(uint32_t pin){
+      |            ^~~~~~~~
+../Src/led.c:21:12: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/led.c:24:13: error: unknown type name 'uint32_t'
+   24 | void LedOff(uint32_t pin){
+      |             ^~~~~~~~
+../Src/led.c:24:13: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/led.c:28:15: error: unknown type name 'uint32_t'
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |               ^~~~~~~~
+../Src/led.c:28:15: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Src/led.c:28:29: error: unknown type name 'unit32_t'
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:45:27 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:45:27 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:45:27 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:45:27 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/system_stm32f4xx.o"
+In file included from ../Inc/led.h:10,
+                 from ../Src/led.c:7:
+../Inc/system_stm32f4xx.h:74:8: error: unknown type name 'uint32_t'
+   74 | extern uint32_t SystemCoreClock;          /*!< System Clock Frequency (Core Clock) */
+      |        ^~~~~~~~
+../Inc/system_stm32f4xx.h:76:14: error: unknown type name 'uint8_t'
+   76 | extern const uint8_t  AHBPrescTable[16];    /*!< AHB prescalers table values */
+      |              ^~~~~~~
+../Inc/system_stm32f4xx.h:77:14: error: unknown type name 'uint8_t'
+   77 | extern const uint8_t  APBPrescTable[8];     /*!< APB prescalers table values */
+      |              ^~~~~~~
+../Inc/system_stm32f4xx.h:124:16: error: unknown type name 'uint32_t'
+  124 | void SwDelayMs(uint32_t ms);
+      |                ^~~~~~~~
+../Inc/system_stm32f4xx.h:1:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+  +++ |+#include <stdint.h>
+    1 | /**
+../Inc/system_stm32f4xx.h:126:1: error: unknown type name 'uint32_t'
+  126 | uint32_t DWT_Init(void);
+      | ^~~~~~~~
+../Inc/system_stm32f4xx.h:126:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/system_stm32f4xx.h:131:37: error: unknown type name 'uint32_t'
+  131 | static inline void DelayMs(volatile uint32_t ms) {
+      |                                     ^~~~~~~~
+../Inc/system_stm32f4xx.h: In function 'DelayMs':
+../Inc/system_stm32f4xx.h:132:9: error: unknown type name 'uint32_t'
+  132 |         uint32_t init_ticks = DWT->CYCCNT;
+      |         ^~~~~~~~
+../Inc/system_stm32f4xx.h:132:9: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/system_stm32f4xx.h:132:31: error: 'DWT' undeclared (first use in this function)
+  132 |         uint32_t init_ticks = DWT->CYCCNT;
+      |                               ^~~
+../Inc/system_stm32f4xx.h:132:31: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/system_stm32f4xx.h:133:9: error: unknown type name 'uint32_t'
+  133 |         uint32_t ticks = (SystemCoreClock / 1000);
+      |         ^~~~~~~~
+../Inc/system_stm32f4xx.h:133:9: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h: At top level:
+../Inc/led.h:26:14: error: unknown type name 'uint32_t'
+   26 | void LedInit(uint32_t pin);
+      |              ^~~~~~~~
+../Inc/led.h:11:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+   10 |  #include "system_stm32f4xx.h"
+  +++ |+#include <stdint.h>
+   11 | 
+../Inc/led.h:27:12: error: unknown type name 'uint32_t'
+   27 | void LedOn(uint32_t pin);
+      |            ^~~~~~~~
+../Inc/led.h:27:12: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h:28:13: error: unknown type name 'uint32_t'
+   28 | void LedOff(uint32_t pin);
+      |             ^~~~~~~~
+../Inc/led.h:28:13: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h:30:15: error: unknown type name 'uint32_t'
+   30 | void LedBlink(uint32_t pin ,uint32_t delay);
+      |               ^~~~~~~~
+../Inc/led.h:30:15: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+../Inc/led.h:30:29: error: unknown type name 'uint32_t'
+   30 | void LedBlink(uint32_t pin ,uint32_t delay);
+      |                             ^~~~~~~~
+../Inc/led.h:30:29: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
+In file included from ../Inc/stm32f407xx.h:168,
+                 from ../Inc/stm32f4xx.h:133,
+                 from ../Src/led.c:8:
+../Inc/system_stm32f4xx.h:126:10: error: conflicting types for 'DWT_Init'; have 'uint32_t(void)' {aka 'long unsigned int(void)'}
+  126 | uint32_t DWT_Init(void);
+      |          ^~~~~~~~
+../Inc/system_stm32f4xx.h:126:10: note: previous declaration of 'DWT_Init' with type 'int(void)'
+  126 | uint32_t DWT_Init(void);
+      |          ^~~~~~~~
+../Src/led.c: In function 'LedInit':
+../Src/led.c:12:24: warning: implicit declaration of function 'BC'; did you mean 'BV'? [-Wimplicit-function-declaration]
+   12 |         RCC->AHB1ENR |=BC(LED_GPIO_EN);
+      |                        ^~
+      |                        BV
+../Inc/led.h:24:34: warning: implicit declaration of function 'BB_ALS_ADDER'; did you mean 'BB_ALS_ADDR'? [-Wimplicit-function-declaration]
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                  ^~~~~~~~~~~~
+../Src/led.c:13:17: note: in expansion of macro 'BB_ALS'
+   13 |                 BB_ALS(&LED_GPIO->MODER,(pin*2))=1;
+      |                 ^~~~~~
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:47:17 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:47:17 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:47:17 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:47:17 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/led.c: In function 'LedInit':
+../Src/led.c:12:24: warning: implicit declaration of function 'BC'; did you mean 'BV'? [-Wimplicit-function-declaration]
+   12 |         RCC->AHB1ENR |=BC(LED_GPIO_EN);
+      |                        ^~
+      |                        BV
+In file included from ../Src/led.c:7:
+../Inc/led.h:24:34: warning: implicit declaration of function 'BB_ALS_ADDER'; did you mean 'BB_ALS_ADDR'? [-Wimplicit-function-declaration]
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                  ^~~~~~~~~~~~
+../Src/led.c:13:17: note: in expansion of macro 'BB_ALS'
+   13 |                 BB_ALS(&LED_GPIO->MODER,(pin*2))=1;
+      |                 ^~~~~~
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:47:34 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:47:34 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:47:34 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:47:35 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/led.c: In function 'LedInit':
+../Src/led.c:12:24: warning: implicit declaration of function 'BC'; did you mean 'BV'? [-Wimplicit-function-declaration]
+   12 |         RCC->AHB1ENR |=BC(LED_GPIO_EN);
+      |                        ^~
+      |                        BV
+In file included from ../Src/led.c:7:
+../Inc/led.h:24:34: warning: implicit declaration of function 'BB_ALS_ADDER'; did you mean 'BB_ALS_ADDR'? [-Wimplicit-function-declaration]
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                  ^~~~~~~~~~~~
+../Src/led.c:13:17: note: in expansion of macro 'BB_ALS'
+   13 |                 BB_ALS(&LED_GPIO->MODER,(pin*2))=1;
+      |                 ^~~~~~
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:47:45 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:47:45 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:47:45 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:47:45 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c: In function 'LedInit':
+../Src/led.c:12:24: warning: implicit declaration of function 'BC'; did you mean 'BV'? [-Wimplicit-function-declaration]
+   12 |         RCC->AHB1ENR |=BC(LED_GPIO_EN);
+      |                        ^~
+      |                        BV
+In file included from ../Src/led.c:7:
+../Inc/led.h:24:34: warning: implicit declaration of function 'BB_ALS_ADDER'; did you mean 'BB_ALS_ADDR'? [-Wimplicit-function-declaration]
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                  ^~~~~~~~~~~~
+../Src/led.c:13:17: note: in expansion of macro 'BB_ALS'
+   13 |                 BB_ALS(&LED_GPIO->MODER,(pin*2))=1;
+      |                 ^~~~~~
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:24:47: note: in definition of macro 'BB_ALS'
+   24 | #define BB_ALS(b,n) *((uint32_t*)BB_ALS_ADDER(b,n))
+      |                                               ^
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:48:26 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:48:26 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:48:26 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:48:26 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/led.c: In function 'LedInit':
+../Src/led.c:12:24: warning: implicit declaration of function 'BC'; did you mean 'BV'? [-Wimplicit-function-declaration]
+   12 |         RCC->AHB1ENR |=BC(LED_GPIO_EN);
+      |                        ^~
+      |                        BV
+In file included from ../Src/led.c:7:
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:51: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE+(((uint32_t)b -BB_BASE)<5)+(n<<2))
+      |                                                   ^
+../Src/led.c:17:17: note: in expansion of macro 'BB_ALS'
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                 ^~~~~~
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:51: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE+(((uint32_t)b -BB_BASE)<5)+(n<<2))
+      |                                                   ^
+../Src/led.c:18:17: note: in expansion of macro 'BB_ALS'
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                 ^~~~~~
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:49:55 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:49:55 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:49:55 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:49:55 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/led.c: In function 'LedInit':
+../Src/led.c:12:24: warning: implicit declaration of function 'BC'; did you mean 'BV'? [-Wimplicit-function-declaration]
+   12 |         RCC->AHB1ENR |=BC(LED_GPIO_EN);
+      |                        ^~
+      |                        BV
+In file included from ../Src/led.c:7:
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:52: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE +(((uint32_t)b - BB_BASE)<5)+(n<<2))
+      |                                                    ^
+../Src/led.c:17:17: note: in expansion of macro 'BB_ALS'
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                 ^~~~~~
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:52: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE +(((uint32_t)b - BB_BASE)<5)+(n<<2))
+      |                                                    ^
+../Src/led.c:18:17: note: in expansion of macro 'BB_ALS'
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                 ^~~~~~
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:50:32 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:50:33 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:50:33 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:50:33 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+In file included from ../Src/led.c:7:
+../Src/led.c: In function 'LedInit':
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:52: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE +(((uint32_t)b - BB_BASE)<5)+(n<<2))
+      |                                                    ^
+../Src/led.c:17:17: note: in expansion of macro 'BB_ALS'
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                 ^~~~~~
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:52: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE +(((uint32_t)b - BB_BASE)<5)+(n<<2))
+      |                                                    ^
+../Src/led.c:18:17: note: in expansion of macro 'BB_ALS'
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                 ^~~~~~
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:51:27 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:51:27 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:51:28 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:51:28 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+In file included from ../Src/led.c:7:
+../Src/led.c: In function 'LedInit':
+../Src/led.c:17:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:52: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE +(((uint32_t)b - BB_BASE)<5)+(n<<2))
+      |                                                    ^
+../Src/led.c:17:17: note: in expansion of macro 'BB_ALS'
+   17 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2))=0;
+      |                 ^~~~~~
+../Src/led.c:18:35: error: 'GPIO_TypeDef' has no member named 'PUPDER'; did you mean 'PUPDR'?
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                                   ^~~~~~
+../Inc/led.h:23:52: note: in definition of macro 'BB_ALS_ADDR'
+   23 | #define BB_ALS_ADDR(b,n) (BB_ALS_BASE +(((uint32_t)b - BB_BASE)<5)+(n<<2))
+      |                                                    ^
+../Src/led.c:18:17: note: in expansion of macro 'BB_ALS'
+   18 |                 BB_ALS(&LED_GPIO->PUPDER,(pin*2+1))=0;
+      |                 ^~~~~~
+../Src/led.c: At top level:
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:51:52 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:51:52 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:51:52 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:51:52 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+../Src/led.c:28:29: error: unknown type name 'unit32_t'; did you mean 'uint32_t'?
+   28 | void LedBlink(uint32_t pin, unit32_t delay){
+      |                             ^~~~~~~~
+      |                             uint32_t
+make: *** [Src/subdir.mk:34: Src/led.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:52:48 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:52:49 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:52:49 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:52:49 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/led.d" -MT"Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/led.o"
+arm-none-eabi-gcc -o "Demo.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sunbeam/Desktop/mcpi pr/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo.elf
+ 
+arm-none-eabi-size  Demo.elf 
+arm-none-eabi-objdump -h -S Demo.elf  > "Demo.list"
+   text	   data	    bss	    dec	    hex	filename
+   1252	      4	   1564	   2820	    b04	Demo.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo.list
+ 
+18:53:38 **** Incremental Build of configuration Debug for project Day3_1 ****
+make -j4 all 
+arm-none-eabi-size  Day3_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1332	      4	   1564	   2900	    b54	Day3_1.elf
+Finished building: default.size.stdout
+ 
+18:53:38 **** Incremental Build of configuration Debug for project Day3_2 ****
+make -j4 all 
+arm-none-eabi-size  Day3_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1208	      4	   1564	   2776	    ad8	Day3_2.elf
+Finished building: default.size.stdout
+ 
+18:53:38 **** Incremental Build of configuration Debug for project Day4_1 ****
+make -j4 all 
+arm-none-eabi-size  Day4_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1576	      4	   1564	   3144	    c48	Day4_1.elf
+Finished building: default.size.stdout
+ 
+18:53:38 **** Incremental Build of configuration Debug for project Demo ****
+make -j4 all 
+arm-none-eabi-size  Demo.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1252	      4	   1564	   2820	    b04	Demo.elf
+Finished building: default.size.stdout
+ 
