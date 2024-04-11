@@ -20,11 +20,9 @@
 #include <stdio.h>
 #include "stm32f4xx.h"
 #include "system_stm32f4xx.h"
+#include "led.h"
 
-#include "switch.h"
-#include "i2c_lcd.h"
-#include "i2c.h"
-#include "adc.h"
+#include "timer.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -32,23 +30,29 @@
 
 int main(void)
 {
-	char str[32];
 	SystemInit();
-	uint16_t val;
-	LcdInit();
-	ADC_Init();
-	LcdPuts(LCD_LINE1,"LDR Reading..!!");
-	SwitchInit(SWITCH);
+	LedInit(LED_GREEN);
+	LedInit(LED_ORANGE);
+	LedInit(LED_RED);
+	LedInit(LED_BLUE);
+	TimerInit();
 
-	while(1){
+	while(1)
+	{
 
-		while(exti0_flag==0)
-			;
-		val = ADC_GetValue();
-		sprintf(str, "ADC=%-4d",val);
-		LcdPuts(LCD_LINE2,str);
+		 LedOn(LED_GREEN);
+		 LedOn(LED_ORANGE);
+		 LedOn(LED_RED);
+		 LedOn(LED_BLUE);
 
-		exti0_flag=0;
+		 TimerDelayMs(3000);
+
+		 LedOff(LED_GREEN);
+		 LedOff(LED_ORANGE);
+		 LedOff(LED_RED);
+		 LedOff(LED_BLUE);
+
+		 TimerDelayMs(7000);
 
 
 	}
